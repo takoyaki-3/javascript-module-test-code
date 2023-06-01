@@ -3,12 +3,17 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
-        library: 'Butter',
-        libraryTarget: 'window',
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: {
+      // name: 'Butter',
+      type: 'module',
     },
-    mode: 'development'
+  },
+  experiments: {
+    outputModule: true,
+  },
+  mode: 'development',
 };
